@@ -1,0 +1,45 @@
+@model Dish
+<h1>Add a new Dish!</h1>
+<div>
+        <a asp-asp-controller="Home" asp-action="Index" class="me-3">Home</a>
+        <a asp-asp-controller="Home" asp-action="NewDish">Add a Dish</a>
+</div>
+<form
+    asp-controller="Home"
+    asp-action="CreateDish"
+    method="post"
+    >
+    <div class="mb-3">
+        <label asp-for="Name">Name <span class="text-danger" asp-validation-for="Name"></span> </label>
+        <input type="text" asp-for="Name" class=" w-25"> 
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Chef">Chef <span class="text-danger" asp-validation-for="Chef"></span> </label>
+        <input type="text" asp-for="Chef" class=" w-25"> 
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Tasteiness">Tasteiness <span class="text-danger" asp-validation-for="Tasteiness"></span> </label>
+        <select asp-for="Tasteiness">
+            <option value ="" disabled selected >Give the dish a rating </option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Calories">Calories <span class="text-danger" asp-validation-for="Calories"></span> </label>
+        <input type="text" asp-for="Calories" class=" w-25"> 
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description">Description <span class="text-danger" asp-validation-for="Description"></span> </label>
+        <textarea asp-for="Description" rows="5" class="form-control"></textarea>
+    </div>
+
+    <button>Send</button>
+</form>
